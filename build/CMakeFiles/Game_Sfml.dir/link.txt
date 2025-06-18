@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Game_Sfml.dir/link.d CMakeFiles/Game_Sfml.dir/src/Game.cpp.o CMakeFiles/Game_Sfml.dir/src/background.cpp.o -o Game_Sfml  -lsfml-graphics -lsfml-window -lsfml-system

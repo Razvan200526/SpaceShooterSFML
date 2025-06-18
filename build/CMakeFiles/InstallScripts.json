@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/razvan/Game_Sfml/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

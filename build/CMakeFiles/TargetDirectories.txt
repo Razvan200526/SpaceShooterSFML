@@ -1,0 +1,3 @@
+/home/razvan/Game_Sfml/build/CMakeFiles/Game_Sfml.dir
+/home/razvan/Game_Sfml/build/CMakeFiles/edit_cache.dir
+/home/razvan/Game_Sfml/build/CMakeFiles/rebuild_cache.dir
