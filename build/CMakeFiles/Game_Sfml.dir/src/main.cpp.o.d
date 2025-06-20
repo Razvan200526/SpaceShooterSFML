@@ -1,5 +1,5 @@
-CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: \
- /home/razvan/Game_Sfml/src/Game.cpp /usr/include/stdc-predef.h \
+CMakeFiles/Game_Sfml.dir/src/main.cpp.o: \
+ /home/razvan/Game_Sfml/src/main.cpp /usr/include/stdc-predef.h \
  /home/razvan/Game_Sfml/src/Game.h /usr/include/SFML/Graphics.hpp \
  /usr/include/SFML/Graphics/BlendMode.hpp \
  /usr/include/SFML/Graphics/Export.hpp /usr/include/SFML/Config.hpp \

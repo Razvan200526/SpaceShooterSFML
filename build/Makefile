@@ -153,29 +153,101 @@ src/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
-src/background.o: src/background.cpp.o
-.PHONY : src/background.o
+src/Player.o: src/Player.cpp.o
+.PHONY : src/Player.o
 
 # target to build an object file
-src/background.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/background.cpp.o
-.PHONY : src/background.cpp.o
+src/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.o
+.PHONY : src/Player.cpp.o
 
-src/background.i: src/background.cpp.i
-.PHONY : src/background.i
+src/Player.i: src/Player.cpp.i
+.PHONY : src/Player.i
 
 # target to preprocess a source file
-src/background.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/background.cpp.i
-.PHONY : src/background.cpp.i
+src/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.i
+.PHONY : src/Player.cpp.i
 
-src/background.s: src/background.cpp.s
-.PHONY : src/background.s
+src/Player.s: src/Player.cpp.s
+.PHONY : src/Player.s
 
 # target to generate assembly for a file
-src/background.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/background.cpp.s
-.PHONY : src/background.cpp.s
+src/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.s
+.PHONY : src/Player.cpp.s
+
+src/Projectile.o: src/Projectile.cpp.o
+.PHONY : src/Projectile.o
+
+# target to build an object file
+src/Projectile.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o
+.PHONY : src/Projectile.cpp.o
+
+src/Projectile.i: src/Projectile.cpp.i
+.PHONY : src/Projectile.i
+
+# target to preprocess a source file
+src/Projectile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i
+.PHONY : src/Projectile.cpp.i
+
+src/Projectile.s: src/Projectile.cpp.s
+.PHONY : src/Projectile.s
+
+# target to generate assembly for a file
+src/Projectile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s
+.PHONY : src/Projectile.cpp.s
+
+src/chunk.o: src/chunk.cpp.o
+.PHONY : src/chunk.o
+
+# target to build an object file
+src/chunk.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o
+.PHONY : src/chunk.cpp.o
+
+src/chunk.i: src/chunk.cpp.i
+.PHONY : src/chunk.i
+
+# target to preprocess a source file
+src/chunk.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i
+.PHONY : src/chunk.cpp.i
+
+src/chunk.s: src/chunk.cpp.s
+.PHONY : src/chunk.s
+
+# target to generate assembly for a file
+src/chunk.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s
+.PHONY : src/chunk.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -189,9 +261,18 @@ help:
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"
-	@echo "... src/background.o"
-	@echo "... src/background.i"
-	@echo "... src/background.s"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
+	@echo "... src/Projectile.o"
+	@echo "... src/Projectile.i"
+	@echo "... src/Projectile.s"
+	@echo "... src/chunk.o"
+	@echo "... src/chunk.i"
+	@echo "... src/chunk.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

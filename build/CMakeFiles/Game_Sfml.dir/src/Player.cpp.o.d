@@ -1,7 +1,8 @@
-CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: \
- /home/razvan/Game_Sfml/src/Game.cpp /usr/include/stdc-predef.h \
- /home/razvan/Game_Sfml/src/Game.h /usr/include/SFML/Graphics.hpp \
- /usr/include/SFML/Graphics/BlendMode.hpp \
+CMakeFiles/Game_Sfml.dir/src/Player.cpp.o: \
+ /home/razvan/Game_Sfml/src/Player.cpp /usr/include/stdc-predef.h \
+ /home/razvan/Game_Sfml/src/Player.h \
+ /home/razvan/Game_Sfml/src/playerTexture.h \
+ /usr/include/SFML/Graphics.hpp /usr/include/SFML/Graphics/BlendMode.hpp \
  /usr/include/SFML/Graphics/Export.hpp /usr/include/SFML/Config.hpp \
  /usr/include/SFML/Graphics/CircleShape.hpp \
  /usr/include/SFML/Graphics/Shape.hpp \
@@ -253,7 +254,4 @@ CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: \
  /usr/include/SFML/System/FileInputStream.hpp \
  /usr/include/SFML/System/InputStream.hpp \
  /usr/include/SFML/System/MemoryInputStream.hpp \
- /usr/include/SFML/System/Sleep.hpp /home/razvan/Game_Sfml/src/chunk.h \
- /home/razvan/Game_Sfml/src/Player.h \
- /home/razvan/Game_Sfml/src/playerTexture.h \
- /usr/include/c++/15.1.1/iostream
+ /usr/include/SFML/System/Sleep.hpp /usr/include/c++/15.1.1/iostream

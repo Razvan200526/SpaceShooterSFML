@@ -3,7 +3,10 @@ Game_Sfml: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
   CMakeFiles/Game_Sfml.dir/src/Game.cpp.o \
-  CMakeFiles/Game_Sfml.dir/src/background.cpp.o \
+  CMakeFiles/Game_Sfml.dir/src/Player.cpp.o \
+  CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o \
+  CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o \
+  CMakeFiles/Game_Sfml.dir/src/main.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libsfml-graphics.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libsfml-window.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libsfml-system.so \
@@ -65,7 +68,13 @@ Game_Sfml: \
 
 CMakeFiles/Game_Sfml.dir/src/Game.cpp.o:
 
-CMakeFiles/Game_Sfml.dir/src/background.cpp.o:
+CMakeFiles/Game_Sfml.dir/src/Player.cpp.o:
+
+CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o:
+
+CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o:
+
+CMakeFiles/Game_Sfml.dir/src/main.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libsfml-graphics.so:
 
