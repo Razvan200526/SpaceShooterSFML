@@ -1,46 +1,65 @@
-#include "background.h"
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Window/Event.hpp>
-#include <SFML/Window/Keyboard.hpp>
-#include <SFML/Window/Window.hpp>
+#include "Game.h"
+#include <exception>
+#include <iostream>
 
-void handleInput(sf::CircleShape &s, float speed) {
-  float dx = 0.f, dy = 0.f;
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-    dy -= speed;
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-    dy += speed;
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-    dx -= speed;
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-    dx += speed;
-  s.move({dx, dy});
+void Game::initWindow() {
+  this->window =
+      new sf::RenderWindow(sf::VideoMode({800, 600}), "SpaceShooter");
 }
-int main() {
-  sf::RenderWindow window(sf::VideoMode({800, 600}), "Game");
-  Background background(1);
-  sf::CircleShape s(25.f);
-  s.setFillColor(sf::Color::Red);
-  s.setPosition({300, 300});
-  sf::View view = window.getView();
-  while (window.isOpen()) {
-    while (const std::optional<sf::Event> event = window.pollEvent()) {
-      if (event->is<sf::Event::Closed>()) {
-        window.close();
-      }
-    }
 
-    handleInput(s, 0.2f);
-    view.setCenter(s.getPosition());
-    window.setView(view);
-    window.clear();
-    window.draw(background.getBackgroundSprite());
-    background.set_scale(window);
-    window.draw(s);
-    window.display();
+void Game::initCamera() {
+  camera.setSize({800.f, 600.f});
+  camera.setCenter(player->getPos());
+}
+Game::~Game() { 
+  delete this->window;
+  delete this->player;
+}
+
+void Game::run() {
+
+  while (this->window->isOpen()) {
+    this->update();
+    this->render();
   }
+}
 
-  return 0;
+void Game::upadtePollEvents() {
+
+  while (const std::optional event = this->window->pollEvent()) {
+    dt = deltaClock.getElapsedTime().asSeconds();
+
+    if (event->is<sf::Event::Closed>()) {
+      this->window->close();
+    }
+    //this->player->update();
+  }
+}
+
+void Game::render() {
+  this->window->clear();
+
+
+  // Render game objects here
+  chunkManager.UpdateChunks(player->getPos());
+  this->window->draw(player->getSprite());
+  this->window->display();
+}
+
+void Game::update() {
+  this->upadtePollEvents();
+
+  // Update game objects here
+}
+
+Game::Game(){
+  this->initWindow(); // make the window
+  player = new Player({0.f,0.f},this->window,this->dt);
+  this->initCamera();
+  try {
+    render();
+  }catch(std::exception& e){
+    std::cerr << "Could not render the game";
+    exit(1);
+  }
 }
