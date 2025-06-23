@@ -55,23 +55,26 @@ void ChunkManager::UpdateChunks(sf::Vector2f pos) {
 }
 
 // Shared texture to avoid loading the same texture multiple times
-static sf::Texture sharedBackgroundTexture;
+static sf::Texture* sharedBackgroundTexture = nullptr;
 static bool textureLoaded = false;
 
-Chunk::Chunk(sf::Vector2i pos) : position(pos) , backgroundSprite(sharedBackgroundTexture) {
-  // Load shared texture only once
-  if (!textureLoaded) {
-    if (!sharedBackgroundTexture.loadFromFile("background.png")) {
+// Function to get or create the shared texture
+static sf::Texture& getSharedTexture() {
+  if (!sharedBackgroundTexture) {
+    sharedBackgroundTexture = new sf::Texture();
+    if (!sharedBackgroundTexture->loadFromFile("background.png")) {
       std::cerr << "Failed to load shared background texture!" << std::endl;
     } else {
       textureLoaded = true;
       std::cout << "Shared background texture loaded successfully" << std::endl;
     }
   }
+  return *sharedBackgroundTexture;
+}
 
-  // Set the sprite to use the shared texture
-  backgroundSprite.setScale({1.5f,1.5f});
-  backgroundSprite.setTexture(sharedBackgroundTexture);
+Chunk::Chunk(sf::Vector2i pos) : position(pos), backgroundSprite(getSharedTexture()) {
+  // Set initial scale
+  backgroundSprite.setScale({1.5f, 1.5f});
 }
 
 void Chunk::load() {
@@ -92,7 +95,7 @@ void Chunk::load() {
     backgroundSprite.setPosition({worldX, worldY});
 
     // Scale sprite to fit chunk size
-    sf::Vector2u textureSize = sharedBackgroundTexture.getSize();
+    sf::Vector2u textureSize = getSharedTexture().getSize();
     float scaleX = 600.f / textureSize.x;  // Use consistent chunk size
     float scaleY = 600.f / textureSize.y;
     backgroundSprite.setScale({scaleX, scaleY});

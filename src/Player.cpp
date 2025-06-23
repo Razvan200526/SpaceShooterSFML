@@ -11,7 +11,7 @@ bool textureLoaded = false;
 struct TextureInitializer {
     TextureInitializer() {
         // Create a default texture so sprites can be constructed
-        sf::Image defaultImage({16, 16}, sf::Color::White);
+        sf::Image defaultImage(sf::Vector2u{16, 16}, sf::Color::White);
         sharedPlayerTexture.loadFromImage(defaultImage);
     }
 } textureInit;
@@ -26,7 +26,7 @@ Player::Player(sf::Vector2f pos, sf::RenderWindow *window)
             std::cerr << "Failed to load purple.png! Creating fallback..." << std::endl;
             
             // Create visible fallback texture
-            sf::Image fallbackImage({16, 16});
+            sf::Image fallbackImage(sf::Vector2u{16, 16}, sf::Color::Black);
             
             // Create a visible pattern
             for (unsigned int x = 0; x < 16; ++x) {
