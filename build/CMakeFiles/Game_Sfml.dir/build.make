@@ -44,19 +44,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/razvan/Game_Sfml
+CMAKE_SOURCE_DIR = /Users/calinrazvan/SpaceShooterSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/razvan/Game_Sfml/build
+CMAKE_BINARY_DIR = /Users/calinrazvan/SpaceShooterSFML/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Game_Sfml.dir/depend.make
@@ -73,74 +73,74 @@ CMakeFiles/Game_Sfml.dir/codegen:
 .PHONY : CMakeFiles/Game_Sfml.dir/codegen
 
 CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: CMakeFiles/Game_Sfml.dir/flags.make
-CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: /home/razvan/Game_Sfml/src/Game.cpp
+CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: /Users/calinrazvan/SpaceShooterSFML/src/Game.cpp
 CMakeFiles/Game_Sfml.dir/src/Game.cpp.o: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Game.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Game.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Game.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Game.cpp.o -c /home/razvan/Game_Sfml/src/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Game.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Game.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Game.cpp.o -c /Users/calinrazvan/SpaceShooterSFML/src/Game.cpp
 
 CMakeFiles/Game_Sfml.dir/src/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game_Sfml.dir/src/Game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/razvan/Game_Sfml/src/Game.cpp > CMakeFiles/Game_Sfml.dir/src/Game.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/calinrazvan/SpaceShooterSFML/src/Game.cpp > CMakeFiles/Game_Sfml.dir/src/Game.cpp.i
 
 CMakeFiles/Game_Sfml.dir/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game_Sfml.dir/src/Game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/razvan/Game_Sfml/src/Game.cpp -o CMakeFiles/Game_Sfml.dir/src/Game.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/calinrazvan/SpaceShooterSFML/src/Game.cpp -o CMakeFiles/Game_Sfml.dir/src/Game.cpp.s
 
 CMakeFiles/Game_Sfml.dir/src/Player.cpp.o: CMakeFiles/Game_Sfml.dir/flags.make
-CMakeFiles/Game_Sfml.dir/src/Player.cpp.o: /home/razvan/Game_Sfml/src/Player.cpp
+CMakeFiles/Game_Sfml.dir/src/Player.cpp.o: /Users/calinrazvan/SpaceShooterSFML/src/Player.cpp
 CMakeFiles/Game_Sfml.dir/src/Player.cpp.o: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Player.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Player.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Player.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Player.cpp.o -c /home/razvan/Game_Sfml/src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Player.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Player.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Player.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Player.cpp.o -c /Users/calinrazvan/SpaceShooterSFML/src/Player.cpp
 
 CMakeFiles/Game_Sfml.dir/src/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game_Sfml.dir/src/Player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/razvan/Game_Sfml/src/Player.cpp > CMakeFiles/Game_Sfml.dir/src/Player.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/calinrazvan/SpaceShooterSFML/src/Player.cpp > CMakeFiles/Game_Sfml.dir/src/Player.cpp.i
 
 CMakeFiles/Game_Sfml.dir/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game_Sfml.dir/src/Player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/razvan/Game_Sfml/src/Player.cpp -o CMakeFiles/Game_Sfml.dir/src/Player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/calinrazvan/SpaceShooterSFML/src/Player.cpp -o CMakeFiles/Game_Sfml.dir/src/Player.cpp.s
 
 CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o: CMakeFiles/Game_Sfml.dir/flags.make
-CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o: /home/razvan/Game_Sfml/src/Projectile.cpp
+CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o: /Users/calinrazvan/SpaceShooterSFML/src/Projectile.cpp
 CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o -c /home/razvan/Game_Sfml/src/Projectile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o -c /Users/calinrazvan/SpaceShooterSFML/src/Projectile.cpp
 
 CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/razvan/Game_Sfml/src/Projectile.cpp > CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/calinrazvan/SpaceShooterSFML/src/Projectile.cpp > CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i
 
 CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/razvan/Game_Sfml/src/Projectile.cpp -o CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/calinrazvan/SpaceShooterSFML/src/Projectile.cpp -o CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s
 
 CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o: CMakeFiles/Game_Sfml.dir/flags.make
-CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o: /home/razvan/Game_Sfml/src/chunk.cpp
+CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o: /Users/calinrazvan/SpaceShooterSFML/src/chunk.cpp
 CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o -c /home/razvan/Game_Sfml/src/chunk.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o -c /Users/calinrazvan/SpaceShooterSFML/src/chunk.cpp
 
 CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/razvan/Game_Sfml/src/chunk.cpp > CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/calinrazvan/SpaceShooterSFML/src/chunk.cpp > CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i
 
 CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/razvan/Game_Sfml/src/chunk.cpp -o CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/calinrazvan/SpaceShooterSFML/src/chunk.cpp -o CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s
 
 CMakeFiles/Game_Sfml.dir/src/main.cpp.o: CMakeFiles/Game_Sfml.dir/flags.make
-CMakeFiles/Game_Sfml.dir/src/main.cpp.o: /home/razvan/Game_Sfml/src/main.cpp
+CMakeFiles/Game_Sfml.dir/src/main.cpp.o: /Users/calinrazvan/SpaceShooterSFML/src/main.cpp
 CMakeFiles/Game_Sfml.dir/src/main.cpp.o: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game_Sfml.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/main.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/main.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/main.cpp.o -c /home/razvan/Game_Sfml/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Game_Sfml.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Game_Sfml.dir/src/main.cpp.o -MF CMakeFiles/Game_Sfml.dir/src/main.cpp.o.d -o CMakeFiles/Game_Sfml.dir/src/main.cpp.o -c /Users/calinrazvan/SpaceShooterSFML/src/main.cpp
 
 CMakeFiles/Game_Sfml.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Game_Sfml.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/razvan/Game_Sfml/src/main.cpp > CMakeFiles/Game_Sfml.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/calinrazvan/SpaceShooterSFML/src/main.cpp > CMakeFiles/Game_Sfml.dir/src/main.cpp.i
 
 CMakeFiles/Game_Sfml.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Game_Sfml.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/razvan/Game_Sfml/src/main.cpp -o CMakeFiles/Game_Sfml.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/calinrazvan/SpaceShooterSFML/src/main.cpp -o CMakeFiles/Game_Sfml.dir/src/main.cpp.s
 
 # Object files for target Game_Sfml
 Game_Sfml_OBJECTS = \
@@ -159,9 +159,11 @@ Game_Sfml: CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o
 Game_Sfml: CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o
 Game_Sfml: CMakeFiles/Game_Sfml.dir/src/main.cpp.o
 Game_Sfml: CMakeFiles/Game_Sfml.dir/build.make
-Game_Sfml: CMakeFiles/Game_Sfml.dir/compiler_depend.ts
+Game_Sfml: /opt/homebrew/lib/libsfml-graphics.3.0.1.dylib
+Game_Sfml: /opt/homebrew/lib/libsfml-window.3.0.1.dylib
+Game_Sfml: /opt/homebrew/lib/libsfml-system.3.0.1.dylib
 Game_Sfml: CMakeFiles/Game_Sfml.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Game_Sfml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Game_Sfml"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Game_Sfml.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -173,6 +175,6 @@ CMakeFiles/Game_Sfml.dir/clean:
 .PHONY : CMakeFiles/Game_Sfml.dir/clean
 
 CMakeFiles/Game_Sfml.dir/depend:
-	cd /home/razvan/Game_Sfml/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/razvan/Game_Sfml /home/razvan/Game_Sfml /home/razvan/Game_Sfml/build /home/razvan/Game_Sfml/build /home/razvan/Game_Sfml/build/CMakeFiles/Game_Sfml.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/calinrazvan/SpaceShooterSFML/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/calinrazvan/SpaceShooterSFML /Users/calinrazvan/SpaceShooterSFML /Users/calinrazvan/SpaceShooterSFML/build /Users/calinrazvan/SpaceShooterSFML/build /Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/Game_Sfml.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Game_Sfml.dir/depend
 

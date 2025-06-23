@@ -1,2 +1,2 @@
-CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o: \
+CMakeFiles/SpaceShooterSFML.dir/src/Projectile.cpp.o: \
   /Users/calinrazvan/SpaceShooterSFML/src/Projectile.cpp

@@ -1,3 +1,7 @@
-/home/razvan/Game_Sfml/build/CMakeFiles/Game_Sfml.dir
-/home/razvan/Game_Sfml/build/CMakeFiles/edit_cache.dir
-/home/razvan/Game_Sfml/build/CMakeFiles/rebuild_cache.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/SpaceShooterSFML.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/edit_cache.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/rebuild_cache.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/list_install_components.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/install.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/install/local.dir
+/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles/install/strip.dir

@@ -48,19 +48,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/razvan/Game_Sfml
+CMAKE_SOURCE_DIR = /Users/calinrazvan/SpaceShooterSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/razvan/Game_Sfml/build
+CMAKE_BINARY_DIR = /Users/calinrazvan/SpaceShooterSFML/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/razvan/Game_Sfml/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,18 +78,63 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/opt/homebrew/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/razvan/Game_Sfml/build/CMakeFiles /home/razvan/Game_Sfml/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles /Users/calinrazvan/SpaceShooterSFML/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/razvan/Game_Sfml/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +162,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Game_Sfml
+# Target rules for targets named SpaceShooterSFML
 
 # Build rule for target.
-Game_Sfml: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Game_Sfml
-.PHONY : Game_Sfml
+SpaceShooterSFML: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SpaceShooterSFML
+.PHONY : SpaceShooterSFML
 
 # fast build rule for target.
-Game_Sfml/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/build
-.PHONY : Game_Sfml/fast
+SpaceShooterSFML/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/build
+.PHONY : SpaceShooterSFML/fast
 
 src/Game.o: src/Game.cpp.o
 .PHONY : src/Game.o
 
 # target to build an object file
 src/Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Game.cpp.o
 .PHONY : src/Game.cpp.o
 
 src/Game.i: src/Game.cpp.i
@@ -142,7 +187,7 @@ src/Game.i: src/Game.cpp.i
 
 # target to preprocess a source file
 src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Game.cpp.i
 .PHONY : src/Game.cpp.i
 
 src/Game.s: src/Game.cpp.s
@@ -150,7 +195,7 @@ src/Game.s: src/Game.cpp.s
 
 # target to generate assembly for a file
 src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
 src/Player.o: src/Player.cpp.o
@@ -158,7 +203,7 @@ src/Player.o: src/Player.cpp.o
 
 # target to build an object file
 src/Player.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Player.cpp.o
 .PHONY : src/Player.cpp.o
 
 src/Player.i: src/Player.cpp.i
@@ -166,7 +211,7 @@ src/Player.i: src/Player.cpp.i
 
 # target to preprocess a source file
 src/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Player.cpp.i
 .PHONY : src/Player.cpp.i
 
 src/Player.s: src/Player.cpp.s
@@ -174,7 +219,7 @@ src/Player.s: src/Player.cpp.s
 
 # target to generate assembly for a file
 src/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
 src/Projectile.o: src/Projectile.cpp.o
@@ -182,7 +227,7 @@ src/Projectile.o: src/Projectile.cpp.o
 
 # target to build an object file
 src/Projectile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Projectile.cpp.o
 .PHONY : src/Projectile.cpp.o
 
 src/Projectile.i: src/Projectile.cpp.i
@@ -190,7 +235,7 @@ src/Projectile.i: src/Projectile.cpp.i
 
 # target to preprocess a source file
 src/Projectile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Projectile.cpp.i
 .PHONY : src/Projectile.cpp.i
 
 src/Projectile.s: src/Projectile.cpp.s
@@ -198,7 +243,7 @@ src/Projectile.s: src/Projectile.cpp.s
 
 # target to generate assembly for a file
 src/Projectile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/Projectile.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/Projectile.cpp.s
 .PHONY : src/Projectile.cpp.s
 
 src/chunk.o: src/chunk.cpp.o
@@ -206,7 +251,7 @@ src/chunk.o: src/chunk.cpp.o
 
 # target to build an object file
 src/chunk.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/chunk.cpp.o
 .PHONY : src/chunk.cpp.o
 
 src/chunk.i: src/chunk.cpp.i
@@ -214,7 +259,7 @@ src/chunk.i: src/chunk.cpp.i
 
 # target to preprocess a source file
 src/chunk.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/chunk.cpp.i
 .PHONY : src/chunk.cpp.i
 
 src/chunk.s: src/chunk.cpp.s
@@ -222,7 +267,7 @@ src/chunk.s: src/chunk.cpp.s
 
 # target to generate assembly for a file
 src/chunk.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/chunk.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/chunk.cpp.s
 .PHONY : src/chunk.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -230,7 +275,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -238,7 +283,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -246,7 +291,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -256,8 +301,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Game_Sfml"
+	@echo "... SpaceShooterSFML"
 	@echo "... src/Game.o"
 	@echo "... src/Game.i"
 	@echo "... src/Game.s"

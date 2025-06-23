@@ -45,29 +45,29 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/bin/cmake
+CMAKE_COMMAND = /opt/homebrew/bin/cmake
 
 # The command to remove a file.
-RM = /usr/bin/cmake -E rm -f
+RM = /opt/homebrew/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/razvan/Game_Sfml
+CMAKE_SOURCE_DIR = /Users/calinrazvan/SpaceShooterSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/razvan/Game_Sfml/build
+CMAKE_BINARY_DIR = /Users/calinrazvan/SpaceShooterSFML/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Game_Sfml.dir/all
+all: CMakeFiles/SpaceShooterSFML.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Game_Sfml.dir/codegen
+codegen: CMakeFiles/SpaceShooterSFML.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Game_Sfml.dir/clean
+clean: CMakeFiles/SpaceShooterSFML.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Game_Sfml.dir
+# Target rules for target CMakeFiles/SpaceShooterSFML.dir
 
 # All Build rule for target.
-CMakeFiles/Game_Sfml.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Game_Sfml"
-.PHONY : CMakeFiles/Game_Sfml.dir/all
+CMakeFiles/SpaceShooterSFML.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target SpaceShooterSFML"
+.PHONY : CMakeFiles/SpaceShooterSFML.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Game_Sfml.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/razvan/Game_Sfml/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Game_Sfml.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/razvan/Game_Sfml/build/CMakeFiles 0
-.PHONY : CMakeFiles/Game_Sfml.dir/rule
+CMakeFiles/SpaceShooterSFML.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SpaceShooterSFML.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles 0
+.PHONY : CMakeFiles/SpaceShooterSFML.dir/rule
 
 # Convenience name for target.
-Game_Sfml: CMakeFiles/Game_Sfml.dir/rule
-.PHONY : Game_Sfml
+SpaceShooterSFML: CMakeFiles/SpaceShooterSFML.dir/rule
+.PHONY : SpaceShooterSFML
 
 # codegen rule for target.
-CMakeFiles/Game_Sfml.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/razvan/Game_Sfml/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target Game_Sfml"
-.PHONY : CMakeFiles/Game_Sfml.dir/codegen
+CMakeFiles/SpaceShooterSFML.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/calinrazvan/SpaceShooterSFML/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target SpaceShooterSFML"
+.PHONY : CMakeFiles/SpaceShooterSFML.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Game_Sfml.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Game_Sfml.dir/build.make CMakeFiles/Game_Sfml.dir/clean
-.PHONY : CMakeFiles/Game_Sfml.dir/clean
+CMakeFiles/SpaceShooterSFML.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpaceShooterSFML.dir/build.make CMakeFiles/SpaceShooterSFML.dir/clean
+.PHONY : CMakeFiles/SpaceShooterSFML.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
