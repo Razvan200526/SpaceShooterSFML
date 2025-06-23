@@ -70,6 +70,7 @@ Chunk::Chunk(sf::Vector2i pos) : position(pos) , backgroundSprite(sharedBackgrou
   }
 
   // Set the sprite to use the shared texture
+  backgroundSprite.setScale({1.5f,1.5f});
   backgroundSprite.setTexture(sharedBackgroundTexture);
 }
 
