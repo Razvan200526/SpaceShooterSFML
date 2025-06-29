@@ -59,7 +59,7 @@ void ChunkManager::UpdateChunks(sf::Vector2f pos) {
 static sf::Texture &getSharedTexture() {
   static sf::Texture sharedBackgroundTexture;
   static bool textureLoaded = false;
-  
+
   if (!textureLoaded) {
     if (!sharedBackgroundTexture.loadFromFile("background.png")) {
       std::cerr << "Failed to load shared background texture!" << std::endl;
@@ -77,7 +77,7 @@ static bool isSharedTextureLoaded() {
   if (!textureLoaded) {
     // Try to load texture and update status
     getSharedTexture();
-    textureLoaded = true; // Set to true after first attempt
+    textureLoaded = true;  // Set to true after first attempt
   }
   return textureLoaded;
 }
