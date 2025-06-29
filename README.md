@@ -187,10 +187,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - **SFML Team** - For the excellent multimedia library
-- **Asset Credits** - [Mention asset sources if applicable]
 
 ## Contact
 
-Your Name - your.email@example.com
+Your Name - doruippu@gmail.com
 
 Project Link: [https://github.com/yourusername/SpaceShooterSFML](https://github.com/yourusername/SpaceShooterSFML)
