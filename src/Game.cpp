@@ -1,6 +1,6 @@
-#include "Game.h"
-#include <SFML/Graphics/Color.hpp>
 #include <iostream>
+
+#include "Game.h"
 
 void Game::initWindow() {
   this->window =
@@ -22,11 +22,11 @@ Game::~Game() {
   if (this->window && this->window->isOpen()) {
     this->window->close();
   }
-  
+
   // Clean up game objects before the window
   delete this->player;
   this->player = nullptr;
-  
+
   // Clean up window last
   delete this->window;
   this->window = nullptr;
@@ -35,7 +35,7 @@ Game::~Game() {
 void Game::run() {
   while (this->window->isOpen()) {
     dt = deltaClock.restart().asSeconds();
-    
+
     this->update();
     this->render();
   }
@@ -55,14 +55,14 @@ void Game::render() {
 
   // Apply camera view
   this->window->setView(camera);
-  
+
   // Draw chunks as background
   chunkManager.drawChunks(*this->window);
-  
+
   // Draw the player sprite on top
   const sf::Sprite& playerSprite = player->getSprite();
   this->window->draw(playerSprite);
-  
+
   this->window->display();
 }
 
@@ -75,12 +75,12 @@ void Game::update() {
   chunkManager.UpdateChunks(player->getPos());
 }
 
-Game::Game(){
+Game::Game() {
   this->initWindow();
-  
+
   dt = 0.0f;
   deltaClock.restart();
-  
+
   // Create player at center
   player = new Player({400.f, 300.f}, this->window);
   this->initCamera();
