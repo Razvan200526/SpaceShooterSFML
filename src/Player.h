@@ -1,8 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include "playerTexture.h"
+#include <SFML/Graphics.hpp>
 #include <vector>
-#include <iostream>
 
 class Projectile;
 class Asteroid;
@@ -15,7 +14,11 @@ class Player {
     sf::Vector2f position;
     sf::Vector2f velocity;
     std::vector<Projectile*> projectiles;
-    // REMOVED: float dt; - We don't need to store dt in Player
+    float shootCooldown;
+    float lastShotTime;
+    float currentRotation;
+    float targetRotation;
+    float rotationSpeed;
 
   public:
     //constructor and destructor
@@ -23,8 +26,10 @@ class Player {
     ~Player();
 
     //utility functions
-    void handleInput(float dt); // Pass dt as parameter
+    void handleInput(float dt);
     void shoot();
+    void updateProjectiles(float dt);
+    void updateRotation(float dt);
     bool checkCollision();
     bool checkCollision(const Asteroid& asteroid);
     void update();
@@ -34,6 +39,7 @@ class Player {
     sf::Vector2f getVeloc() const ;
     sf::FloatRect getGlobalBounds() const ;
     const sf::Sprite& getSprite() const ;
+    const std::vector<Projectile*>& getProjectiles() const;
 
     //setters
     void setPos(sf::Vector2f newPos);

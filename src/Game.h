@@ -2,23 +2,22 @@
 #define GAME_H
 #include <SFML/Graphics.hpp>
 #include <SFML/Graphics/View.hpp>
-#include "chunk.h"
-#include "Player.h"
-class Game {
 
-private:
+#include "Player.h"
+#include "chunk.h"
+class Game {
+ private:
   // variables
   sf::RenderWindow *window;
   ChunkManager chunkManager;
   sf::View camera;
   Player *player;
-  sf::Clock deltaClock;//used for constant movement across all platforms
+  sf::Clock deltaClock;
   float dt;
-  // functions
   void initWindow();
   void initCamera();
 
-public:
+ public:
   // Constructor and destructors
   Game();
   ~Game();
@@ -28,7 +27,7 @@ public:
   void render();
   void run();
 
-  const Player* getPlayer(){return player;}
+  const Player *getPlayer() { return player; }
 };
 
-#endif // GAME_H
+#endif  // GAME_H

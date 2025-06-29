@@ -54,8 +54,6 @@ void ChunkManager::UpdateChunks(sf::Vector2f pos) {
   }
 }
 
-// Shared texture to avoid loading the same texture multiple times
-// Using a function-static approach for safer initialization and cleanup
 static sf::Texture &getSharedTexture() {
   static sf::Texture sharedBackgroundTexture;
   static bool textureLoaded = false;
@@ -71,20 +69,18 @@ static sf::Texture &getSharedTexture() {
   return sharedBackgroundTexture;
 }
 
-// Helper function to check if texture is loaded
+
 static bool isSharedTextureLoaded() {
   static bool textureLoaded = false;
   if (!textureLoaded) {
-    // Try to load texture and update status
     getSharedTexture();
-    textureLoaded = true;  // Set to true after first attempt
+    textureLoaded = true;  
   }
   return textureLoaded;
 }
 
 Chunk::Chunk(sf::Vector2i pos)
     : position(pos), backgroundSprite(getSharedTexture()) {
-  // Set initial scale
   backgroundSprite.setScale({1.5f, 1.5f});
 }
 
@@ -92,7 +88,7 @@ void Chunk::load() {
   if (isLoaded) return;
 
   try {
-    // Check if shared texture is available
+
     if (!isSharedTextureLoaded()) {
       throw std::runtime_error("Shared texture not loaded");
     }
@@ -100,14 +96,14 @@ void Chunk::load() {
     std::cout << "Loading chunk at " << position.x << ", " << position.y
               << std::endl;
 
-    // Calculate world position using consistent chunk size (600)
-    float worldX = position.x * CHUNK_SIZE;  // Use chunkSize from ChunkManager
+  
+    float worldX = position.x * CHUNK_SIZE;  
     float worldY = position.y * CHUNK_SIZE;
     backgroundSprite.setPosition({worldX, worldY});
 
     // Scale sprite to fit chunk size
     sf::Vector2u textureSize = getSharedTexture().getSize();
-    float scaleX = 600.f / textureSize.x;  // Use consistent chunk size
+    float scaleX = 600.f / textureSize.x; 
     float scaleY = 600.f / textureSize.y;
     backgroundSprite.setScale({scaleX, scaleY});
 
@@ -119,7 +115,7 @@ void Chunk::load() {
   } catch (const std::exception &e) {
     std::cerr << "Error loading chunk at " << position.x << ", " << position.y
               << ": " << e.what() << std::endl;
-    isLoaded = false;  // Ensure it's marked as not loaded on failure
+    isLoaded = false; 
   }
 }
 
@@ -129,5 +125,4 @@ void Chunk::unload() {
   std::cout << "Unloading chunk at " << position.x << ", " << position.y
             << std::endl;
   isLoaded = false;
-  // Note: We don't reset the sprite texture since we're using a shared texture
 }

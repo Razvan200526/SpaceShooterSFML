@@ -1,33 +1,27 @@
-#include <iostream>
 
 #include "Game.h"
+#include "Projectile.h"
 
 void Game::initWindow() {
   this->window =
-      new sf::RenderWindow(sf::VideoMode({800, 600}), "SpaceShooter");
-  this->window->setFramerateLimit(60);
+      new sf::RenderWindow(sf::VideoMode({1920, 1080}), "SpaceShooter");
 }
 
 void Game::initCamera() {
-  camera.setSize({800.f, 600.f});
+  camera.setSize({1920.f, 1080.f});
   camera.setCenter(player->getPos());
-  // Don't zoom for now - let's see everything clearly
-  camera.zoom(0.2f);
+  camera.zoom(0.1f);
   this->window->setView(camera);
 }
 
 Game::~Game() {
-  // Ensure proper cleanup order to avoid threading issues
-  // Close window first to stop any rendering operations
   if (this->window && this->window->isOpen()) {
     this->window->close();
   }
 
-  // Clean up game objects before the window
   delete this->player;
   this->player = nullptr;
 
-  // Clean up window last
   delete this->window;
   this->window = nullptr;
 }
@@ -50,18 +44,20 @@ void Game::upadtePollEvents() {
 }
 
 void Game::render() {
-  // Clear with black
-  this->window->clear(sf::Color::Black);
+  this->window->clear();
 
-  // Apply camera view
   this->window->setView(camera);
 
-  // Draw chunks as background
   chunkManager.drawChunks(*this->window);
 
-  // Draw the player sprite on top
   const sf::Sprite& playerSprite = player->getSprite();
   this->window->draw(playerSprite);
+
+  // Render projectiles
+  const std::vector<Projectile*>& projectiles = player->getProjectiles();
+  for(const Projectile* projectile : projectiles) {
+    this->window->draw(projectile->getSprite());
+  }
 
   this->window->display();
 }
@@ -81,7 +77,6 @@ Game::Game() {
   dt = 0.0f;
   deltaClock.restart();
 
-  // Create player at center
   player = new Player({400.f, 300.f}, this->window);
   this->initCamera();
 }
