@@ -78,23 +78,20 @@ elseif(UNIX)
     target_link_libraries(${PROJECT_NAME} PRIVATE pthread)
 endif()
 
-# Copy assets/resources if they exist
+# Copy assets to build directory
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/assets")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        "${CMAKE_CURRENT_SOURCE_DIR}/assets"
-        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/assets"
-        COMMENT "Copying assets to build directory"
-    )
-endif()
-
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/resources")
-    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        "${CMAKE_CURRENT_SOURCE_DIR}/resources"
-        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/resources"
-        COMMENT "Copying resources to build directory"
-    )
+    # Copy all assets to build directory root for easy access
+    file(GLOB ASSET_FILES "${CMAKE_CURRENT_SOURCE_DIR}/assets/*")
+    foreach(ASSET_FILE ${ASSET_FILES})
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${ASSET_FILE}"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
+            COMMENT "Copying ${ASSET_FILE} to build directory"
+        )
+    endforeach()
+else()
+    message(WARNING "Assets directory not found. Game may not run correctly without assets.")
 endif()
 
 # Install target (optional)

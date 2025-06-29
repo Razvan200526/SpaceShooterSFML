@@ -16,9 +16,20 @@ void Game::initCamera() {
   this->window->setView(camera);
 }
 
-Game::~Game() { 
-  delete this->window;
+Game::~Game() {
+  // Ensure proper cleanup order to avoid threading issues
+  // Close window first to stop any rendering operations
+  if (this->window && this->window->isOpen()) {
+    this->window->close();
+  }
+  
+  // Clean up game objects before the window
   delete this->player;
+  this->player = nullptr;
+  
+  // Clean up window last
+  delete this->window;
+  this->window = nullptr;
 }
 
 void Game::run() {

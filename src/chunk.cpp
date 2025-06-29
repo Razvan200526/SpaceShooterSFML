@@ -1,9 +1,9 @@
-#include "chunk.h"
 #include <SFML/Graphics.hpp>
-#include <SFML/System/Vector2.hpp>
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+
+#include "chunk.h"
 
 sf::Vector2i ChunkManager::worldToChunk(sf::Vector2f worldPos) {
   return sf::Vector2i(static_cast<int>(std::floor(worldPos.x / chunkSize)),
@@ -55,39 +55,50 @@ void ChunkManager::UpdateChunks(sf::Vector2f pos) {
 }
 
 // Shared texture to avoid loading the same texture multiple times
-static sf::Texture* sharedBackgroundTexture = nullptr;
-static bool textureLoaded = false;
-
-// Function to get or create the shared texture
-static sf::Texture& getSharedTexture() {
-  if (!sharedBackgroundTexture) {
-    sharedBackgroundTexture = new sf::Texture();
-    if (!sharedBackgroundTexture->loadFromFile("background.png")) {
+// Using a function-static approach for safer initialization and cleanup
+static sf::Texture &getSharedTexture() {
+  static sf::Texture sharedBackgroundTexture;
+  static bool textureLoaded = false;
+  
+  if (!textureLoaded) {
+    if (!sharedBackgroundTexture.loadFromFile("background.png")) {
       std::cerr << "Failed to load shared background texture!" << std::endl;
     } else {
       textureLoaded = true;
       std::cout << "Shared background texture loaded successfully" << std::endl;
     }
   }
-  return *sharedBackgroundTexture;
+  return sharedBackgroundTexture;
 }
 
-Chunk::Chunk(sf::Vector2i pos) : position(pos), backgroundSprite(getSharedTexture()) {
+// Helper function to check if texture is loaded
+static bool isSharedTextureLoaded() {
+  static bool textureLoaded = false;
+  if (!textureLoaded) {
+    // Try to load texture and update status
+    getSharedTexture();
+    textureLoaded = true; // Set to true after first attempt
+  }
+  return textureLoaded;
+}
+
+Chunk::Chunk(sf::Vector2i pos)
+    : position(pos), backgroundSprite(getSharedTexture()) {
   // Set initial scale
   backgroundSprite.setScale({1.5f, 1.5f});
 }
 
 void Chunk::load() {
-  if (isLoaded)
-    return;
+  if (isLoaded) return;
 
   try {
     // Check if shared texture is available
-    if (!textureLoaded) {
+    if (!isSharedTextureLoaded()) {
       throw std::runtime_error("Shared texture not loaded");
     }
 
-    std::cout << "Loading chunk at " << position.x << ", " << position.y << std::endl;
+    std::cout << "Loading chunk at " << position.x << ", " << position.y
+              << std::endl;
 
     // Calculate world position using consistent chunk size (600)
     float worldX = position.x * CHUNK_SIZE;  // Use chunkSize from ChunkManager
@@ -101,8 +112,9 @@ void Chunk::load() {
     backgroundSprite.setScale({scaleX, scaleY});
 
     isLoaded = true;
-    std::cout << "Successfully loaded chunk at " << position.x << ", " << position.y 
-              << " at world position (" << worldX << ", " << worldY << ")" << std::endl;
+    std::cout << "Successfully loaded chunk at " << position.x << ", "
+              << position.y << " at world position (" << worldX << ", "
+              << worldY << ")" << std::endl;
 
   } catch (const std::exception &e) {
     std::cerr << "Error loading chunk at " << position.x << ", " << position.y
@@ -112,10 +124,10 @@ void Chunk::load() {
 }
 
 void Chunk::unload() {
-  if (!isLoaded)
-    return;
+  if (!isLoaded) return;
 
-  std::cout << "Unloading chunk at " << position.x << ", " << position.y << std::endl;
+  std::cout << "Unloading chunk at " << position.x << ", " << position.y
+            << std::endl;
   isLoaded = false;
   // Note: We don't reset the sprite texture since we're using a shared texture
 }
