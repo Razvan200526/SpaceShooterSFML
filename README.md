@@ -96,10 +96,14 @@ For Windows users, there's an automated build script:
    - Show you where the executable is located
 
 **Requirements for Windows:**
-- **Git** ([download here](https://git-scm.com/download/win))
-- **CMake** ([download here](https://cmake.org/download/))
-- **One of:**
-  - Visual Studio 2019+ with C++ tools
+- **Git** ([download here](https://git-scm.com/download/win)) - Free
+- **CMake** ([download here](https://cmake.org/download/)) - Free
+- **Visual Studio 2022 Community Edition** ([download here](https://visualstudio.microsoft.com/vs/community/)) - **FREE**
+  - During installation, make sure to select "Desktop development with C++" workload
+  - This includes the MSVC compiler and Windows SDK
+
+**Alternative Compilers (if you prefer):**
+  - Visual Studio 2019 Community Edition
   - MinGW-w64
   - Visual Studio Build Tools
 

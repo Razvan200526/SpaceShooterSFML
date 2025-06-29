@@ -13,12 +13,26 @@ endif()
 
 # Compiler-specific settings for better cross-platform compatibility
 if(MSVC)
-    # Windows-specific settings for Visual Studio
-    add_compile_options(/W4)
-    add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
+    # Windows-specific settings for Visual Studio (including Community Edition)
+    add_compile_options(/W4)  # High warning level
+    add_compile_options(/permissive-)  # Disable non-conforming code
+    add_compile_definitions(_CRT_SECURE_NO_WARNINGS)  # Disable CRT warnings
+    add_compile_definitions(NOMINMAX)  # Prevent min/max macro conflicts
+    
+    # Visual Studio 2022 specific optimizations
+    if(MSVC_VERSION GREATER_EQUAL 1930)  # VS 2022
+        message(STATUS "Detected Visual Studio 2022 - enabling enhanced optimizations")
+        add_compile_options(/std:c++17)  # Explicitly set C++17
+    endif()
+    
+    # Enable static runtime linking for easier distribution
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 else()
-    # GCC/Clang settings for Linux/macOS
+    # GCC/Clang settings for Linux/macOS/MinGW
     add_compile_options(-Wall -Wextra -Wpedantic)
+    if(WIN32)  # MinGW on Windows
+        add_compile_definitions(NOMINMAX)
+    endif()
 endif()
 
 # Platform-specific settings

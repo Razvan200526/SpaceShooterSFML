@@ -35,26 +35,41 @@ echo This will automatically download SFML if not found on system.
 echo.
 
 REM Configure with CMake (this will auto-download SFML if needed)
-cmake -G "Visual Studio 17 2022" .. 2>nul
+echo Trying Visual Studio 2022 (Community/Professional/Enterprise)...
+cmake -G "Visual Studio 17 2022" -A x64 .. 2>nul
 if errorlevel 1 (
+    echo.
     echo Visual Studio 2022 not found, trying Visual Studio 2019...
-    cmake -G "Visual Studio 16 2019" .. 2>nul
+    cmake -G "Visual Studio 16 2019" -A x64 .. 2>nul
     if errorlevel 1 (
-        echo Visual Studio not found, trying MinGW...
+        echo.
+        echo Visual Studio not found, trying MinGW-w64...
         cmake -G "MinGW Makefiles" ..
         if errorlevel 1 (
-            echo ERROR: No suitable build system found
-            echo Please install Visual Studio 2019+ or MinGW-w64
+            echo.
+            echo ❌ ERROR: No suitable build system found!
+            echo.
+            echo Please install one of the following:
+            echo   1. Visual Studio 2022 Community Edition (FREE)
+            echo      Download: https://visualstudio.microsoft.com/vs/community/
+            echo      Make sure to install "Desktop development with C++" workload
+            echo.
+            echo   2. Visual Studio 2019 Community Edition
+            echo      Download: https://visualstudio.microsoft.com/vs/older-downloads/
+            echo.
+            echo   3. MinGW-w64
+            echo      Download: https://www.mingw-w64.org/downloads/
+            echo.
             pause
             exit /b 1
         )
-        echo ✓ Using MinGW Makefiles
+        echo ✓ Using MinGW-w64 Makefiles
         goto :build_mingw
     )
-    echo ✓ Using Visual Studio 2019
+    echo ✓ Using Visual Studio 2019 (64-bit)
     goto :build_vs
 )
-echo ✓ Using Visual Studio 2022
+echo ✓ Using Visual Studio 2022 (64-bit)
 
 :build_vs
 echo.
