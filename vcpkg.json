@@ -1,0 +1,13 @@
+{
+  "name": "spaceshootersfml",
+  "version": "1.0.0",
+  "description": "A 2D space shooter game built with C++ and SFML",
+  "homepage": "https://github.com/Razvan200526/SpaceShooterSFML",
+  "dependencies": [
+    {
+      "name": "sfml",
+      "version>=": "2.5.0"
+    }
+  ],
+  "builtin-baseline": "2024.06.15"
+}

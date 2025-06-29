@@ -27,10 +27,33 @@ if(WIN32)
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
-# Find SFML with fallback versions for better compatibility
+# Option 1: Try to find SFML installed on system
 find_package(SFML 3.0 COMPONENTS Graphics Window System)
 if(NOT SFML_FOUND)
-    find_package(SFML 2.5 COMPONENTS Graphics Window System REQUIRED)
+    find_package(SFML 2.5 COMPONENTS Graphics Window System)
+endif()
+
+# Option 2: If SFML not found, download and build it automatically
+if(NOT SFML_FOUND)
+    include(FetchContent)
+    
+    message(STATUS "SFML not found on system. Downloading and building SFML...")
+    
+    FetchContent_Declare(
+        SFML
+        GIT_REPOSITORY https://github.com/SFML/SFML.git
+        GIT_TAG 2.6.1  # Use stable version
+    )
+    
+    # Configure SFML options
+    set(SFML_BUILD_AUDIO FALSE CACHE BOOL "" FORCE)     # We don't need audio
+    set(SFML_BUILD_NETWORK FALSE CACHE BOOL "" FORCE)   # We don't need network
+    set(SFML_BUILD_EXAMPLES FALSE CACHE BOOL "" FORCE)  # Don't build examples
+    set(SFML_BUILD_DOC FALSE CACHE BOOL "" FORCE)       # Don't build documentation
+    
+    FetchContent_MakeAvailable(SFML)
+    
+    message(STATUS "SFML downloaded and configured successfully!")
 endif()
 
 # Collect source files more explicitly

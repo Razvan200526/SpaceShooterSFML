@@ -34,7 +34,13 @@ sudo apt-get install libsfml-dev
 ```
 
 #### Windows
-Download SFML from [https://www.sfml-dev.org/download.php](https://www.sfml-dev.org/download.php)
+
+**Option 1: Automatic (Recommended)**
+The project will automatically download and build SFML if it's not found on your system.
+
+**Option 2: Manual Installation**
+- Download SFML from [https://www.sfml-dev.org/download.php](https://www.sfml-dev.org/download.php)
+- Or use vcpkg: `vcpkg install sfml`
 
 ## Building
 
@@ -66,6 +72,36 @@ Download SFML from [https://www.sfml-dev.org/download.php](https://www.sfml-dev.
    ```bash
    ./SpaceShooterSFML
    ```
+
+### Windows Quick Start
+
+For Windows users, there's an automated build script:
+
+1. **Clone the repository:**
+   ```cmd
+   git clone https://github.com/Razvan200526/SpaceShooterSFML.git
+   cd SpaceShooterSFML
+   ```
+
+2. **Run the build script:**
+   ```cmd
+   build_windows.bat
+   ```
+
+   This script will:
+   - Check for required tools (Git, CMake)
+   - Automatically detect your compiler (Visual Studio or MinGW)
+   - Download and build SFML if not found
+   - Build the game
+   - Show you where the executable is located
+
+**Requirements for Windows:**
+- **Git** ([download here](https://git-scm.com/download/win))
+- **CMake** ([download here](https://cmake.org/download/))
+- **One of:**
+  - Visual Studio 2019+ with C++ tools
+  - MinGW-w64
+  - Visual Studio Build Tools
 
 ## Controls
 
