@@ -10,7 +10,7 @@ void Game::initWindow() {
 void Game::initCamera() {
   camera.setSize({1920.f, 1080.f});
   camera.setCenter(player->getPos());
-  camera.zoom(0.1f);
+  camera.zoom(0.17f);
   this->window->setView(camera);
 }
 

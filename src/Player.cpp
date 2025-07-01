@@ -24,11 +24,11 @@ Player::Player(sf::Vector2f pos, sf::RenderWindow* window)
       health(10),
       position(pos),
       velocity({0.f, 0.f}),
-      shootCooldown(0.05f), 
+      shootCooldown(0.07f), 
       lastShotTime(0.0f),
       currentRotation(0.0f),
       targetRotation(0.0f),
-      rotationSpeed(300.0f) 
+      rotationSpeed(500.0f) 
 {
   if (!textureLoaded) {
     if (!sharedPlayerTexture.loadFromFile("purple.png")) {
