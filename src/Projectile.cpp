@@ -1,5 +1,5 @@
 #include "Projectile.h"
-#include <iostream>
+
 sf::Texture sharedProjTexture;
 bool loaded = false;
 
@@ -7,20 +7,14 @@ bool loaded = false;
 struct TextureInitializer {
   TextureInitializer() {
     sf::Image defaultImage(sf::Vector2u{16, 16}, sf::Color::White);
-    if(!sharedProjTexture.loadFromImage(defaultImage)){
-      std::cout << "Couldn't load default image\n";
-    }
+    (void)sharedProjTexture.loadFromImage(defaultImage);
   }
 } projTextureInit;
 
 Projectile::Projectile(sf::Vector2f pos, sf::Vector2f direction) : sprite(sharedProjTexture) , damage(5), pos(pos){
 
     if(!loaded){
-        if(!sharedProjTexture.loadFromFile("proj.png")){
-            std::cout << "Could not load from file proj.png\n";
-        } else {
-            std::cout << "Successfully loaded proj.png\n";
-        }
+        (void)sharedProjTexture.loadFromFile("proj.png");
         sharedProjTexture.setSmooth(false);
         loaded = true;
     }

@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <algorithm>
 #include <cmath>
-#include <iostream>
 
 #include "chunk.h"
 
@@ -59,12 +58,8 @@ static sf::Texture &getSharedTexture() {
   static bool textureLoaded = false;
 
   if (!textureLoaded) {
-    if (!sharedBackgroundTexture.loadFromFile("background.png")) {
-      std::cerr << "Failed to load shared background texture!" << std::endl;
-    } else {
-      textureLoaded = true;
-      std::cout << "Shared background texture loaded successfully" << std::endl;
-    }
+    (void)sharedBackgroundTexture.loadFromFile("background.png");
+    textureLoaded = true;
   }
   return sharedBackgroundTexture;
 }
@@ -93,36 +88,23 @@ void Chunk::load() {
       throw std::runtime_error("Shared texture not loaded");
     }
 
-    std::cout << "Loading chunk at " << position.x << ", " << position.y
-              << std::endl;
-
-  
     float worldX = position.x * CHUNK_SIZE;  
     float worldY = position.y * CHUNK_SIZE;
     backgroundSprite.setPosition({worldX, worldY});
 
-    // Scale sprite to fit chunk size
     sf::Vector2u textureSize = getSharedTexture().getSize();
     float scaleX = 600.f / textureSize.x; 
     float scaleY = 600.f / textureSize.y;
     backgroundSprite.setScale({scaleX, scaleY});
 
     isLoaded = true;
-    std::cout << "Successfully loaded chunk at " << position.x << ", "
-              << position.y << " at world position (" << worldX << ", "
-              << worldY << ")" << std::endl;
 
   } catch (const std::exception &e) {
-    std::cerr << "Error loading chunk at " << position.x << ", " << position.y
-              << ": " << e.what() << std::endl;
     isLoaded = false; 
   }
 }
 
 void Chunk::unload() {
   if (!isLoaded) return;
-
-  std::cout << "Unloading chunk at " << position.x << ", " << position.y
-            << std::endl;
   isLoaded = false;
 }

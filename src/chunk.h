@@ -3,10 +3,10 @@
 #include <vector>
 constexpr int CHUNK_SIZE = 600;
 
-struct Chunk{
+struct Chunk {
   sf::Vector2i position;
   sf::Sprite
-      backgroundSprite; // Removed texture since we're using shared texture
+      backgroundSprite;  // Removed texture since we're using shared texture
   bool isLoaded = false;
 
   Chunk(sf::Vector2i pos);
@@ -19,7 +19,7 @@ class ChunkManager {
   const int chunkSize = CHUNK_SIZE;
   const int load_distance = 2;
 
-public:
+ public:
   void UpdateChunks(sf::Vector2f pos);
   void drawChunks(sf::RenderWindow &window);
   sf::Vector2i worldToChunk(sf::Vector2f pos);
