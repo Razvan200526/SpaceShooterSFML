@@ -19,7 +19,7 @@ Before building this project, make sure you have:
 
 - **C++17** compiler (GCC, Clang, or MSVC)
 - **CMake** 3.16 or higher
-- **SFML** 3.0+ (or 2.5+ as fallback)
+- **SFML** 3.0+
 
 ### Installing SFML
 
@@ -134,14 +134,12 @@ SpaceShooterSFML/
 
 ### Chunk System
 The game uses a dynamic chunk loading system:
-- World is divided into 600x600 pixel chunks
 - Only chunks within 2 chunk radius of player are loaded
 - Chunks are automatically loaded/unloaded as player moves
 - Shared texture system for efficient memory usage
 
 ### Architecture
 - **Game Loop**: Standard game loop with update/render phases
-- **RAII Memory Management**: Proper resource cleanup to prevent memory leaks
 - **Exception Safety**: Robust error handling for file loading and system operations
 
 ## Development
@@ -158,11 +156,6 @@ To generate compile commands for IDE support:
 cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
 ```
 
-## Known Issues
-
-- ~~Mutex errors on program termination~~ ✅ **FIXED**
-- Background texture must be in build directory
-
 ## Future Features
 
 - [ ] Projectile system
@@ -175,9 +168,9 @@ cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/feature`)
+3. Commit your changes (`git commit -m 'feature'`)
+4. Push to the branch (`git push origin feature/feature`)
 5. Open a Pull Request
 
 ## License
