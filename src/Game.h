@@ -55,7 +55,6 @@ class Game {
   void renderUI();
 
  public:
-  // Constructor and destructors
   Game();
   ~Game();
 
